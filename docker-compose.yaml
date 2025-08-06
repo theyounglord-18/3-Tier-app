@@ -33,7 +33,7 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
       args:
-        REACT_APP_API_URL: http://34.45.69.106:5000  # Replace with your VM public IP
+        REACT_APP_API_URL: http://34.69.99.74:5000  # Replace with your VM public IP
     container_name: frontend
     restart: always
     ports:

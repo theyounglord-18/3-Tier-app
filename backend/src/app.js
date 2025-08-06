@@ -11,7 +11,7 @@ const app = express();
 
 // ✅ Enable CORS for frontend origin
 app.use(cors({
-    origin: 'http://34.45.69.106:3000', // <-- allow requests from React dev server
+    origin: 'http://34.69.99.74:3000', // <-- allow requests from React dev server
     credentials: true, // optional: if you're using cookies or auth
 }));
 
