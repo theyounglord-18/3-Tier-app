@@ -11,7 +11,8 @@ services:
       - mongo-data:/data/db
 
   backend:
-    build: ./backend
+    build:
+      context: ./backend
     container_name: backend
     restart: always
     ports:
@@ -28,16 +29,20 @@ services:
       - mongo
 
   frontend:
-    build: ./frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        REACT_APP_API_URL: http://34.45.69.106:5000  # Replace with your VM public IP
     container_name: frontend
     restart: always
     ports:
       - "3000:80"
     stdin_open: true
     tty: true
+   
     environment:
       - NODE_ENV=development
-      - REACT_APP_API_URL=http://34.45.69.106:5000
     volumes:
       - ./frontend:/app
       - /app/node_modules
